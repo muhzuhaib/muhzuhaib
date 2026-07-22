@@ -7,6 +7,8 @@ actually works.
 **Currently working in** Python · FastAPI · Postgres · Docker
 **Previously** TypeScript · Electron · React
 
+Open to backend, AI engineering and AI automation roles.
+
 ---
 
 ### Selected work
