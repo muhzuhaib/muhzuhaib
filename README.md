@@ -24,6 +24,17 @@ away from the code. Runs on a laptop CPU with no API keys.
 
 `Python · FastAPI · sentence-transformers · Docker`
 
+**[ci-triage](https://github.com/muhzuhaib/ci-triage)**: reads a failing CI build and answers it, for at most a fixed amount of money
+
+A webhook service that fetches the failed jobs' logs, asks an LLM what broke, and posts one comment on
+the pull request. The interesting part is not the LLM call. The spend ceiling is a guarantee rather
+than a hope, enforced inside the database's own lock so concurrent workers cannot race past it, and the
+comment is posted exactly once even though webhooks get redelivered and workers get killed mid-run. A
+failure-injection suite kills the worker at each seam, and it found a real defect that 235 passing
+tests had walked past.
+
+`Python · FastAPI · Postgres · Docker`
+
 **[Orbit](https://github.com/muhzuhaib/orbit)**: a multi-model desktop AI client
 
 A cross-platform Electron app that talks to Anthropic, Google, Groq, OpenAI-compatible and local Ollama
@@ -44,8 +55,8 @@ keep fetches fast without tripping upstream limits.
 
 ### In progress
 
-More Python services on the same theme: per-run cost ceilings on LLM pipelines, and evaluation suites
-that gate CI rather than living in a notebook. Links here as they land.
+Small, finished tools extracted from real use, published properly rather than left as gists. Links
+here as they land.
 
 ---
 
